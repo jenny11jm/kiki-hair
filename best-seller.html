@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Sellers — KIKI HAIR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="top-bar">Free shipping across West Africa &nbsp;·&nbsp; 100% virgin human hair &nbsp;·&nbsp; WhatsApp: +1 (555) 123-4567</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">👑</div>
+        <div class="logo-text">
+          <span class="logo-brand">KIKI HAIR</span>
+          <span class="logo-sub">extensions</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop Hair</a></li>
+        <li><a href="best-seller.html" class="active">Best Seller</a></li>
+        <li><a href="hair-bundles.html">Hair Bundles</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li></ul>
+      <div class="nav-actions">
+        <a href="account.html" class="nav-account">Account</a>
+        <div class="nav-icon">🔍</div>
+        <div class="nav-icon" id="cartIcon" style="cursor:pointer">🛒<span class="cart-badge" style="display:none">0</span></div>
+        <div class="hamburger" id="hamburgerBtn"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-close" id="mobileMenuClose">✕</div>
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop Hair</a>
+  <a href="best-seller.html">Best Seller</a>
+  <a href="hair-bundles.html">Hair Bundles</a>
+  <a href="faq.html">FAQ</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="account.html">My Account</a>
+</div>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>Shopping Cart</h3><div class="cart-close" id="cartCloseBtn">✕</div></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">$0</span></div>
+    <button class="btn btn-dark" style="width:100%;border-radius:4px;padding:14px;" id="checkoutBtn">Checkout Now</button>
+    <p class="cart-note">Free shipping to West Africa 🌍</p>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <h1>Our <span>Best Sellers</span></h1>
+      <p>The styles our clients can't stop ordering — ranked by popularity and love.</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span>Best Seller</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP BADGE -->
+<div style="background:var(--cream);padding:28px 0;border-bottom:1px solid var(--border);">
+  <div class="container" style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;">
+    <div style="text-align:center;font-family:'Montserrat',sans-serif;">
+      <div style="font-size:1.8rem;font-weight:800;color:var(--gold);">5,000+</div>
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid-gray);margin-top:4px;">Happy Clients</div>
+    </div>
+    <div style="width:1px;height:40px;background:var(--border);"></div>
+    <div style="text-align:center;font-family:'Montserrat',sans-serif;">
+      <div style="font-size:1.8rem;font-weight:800;color:var(--gold);">4.9 ★</div>
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid-gray);margin-top:4px;">Average Rating</div>
+    </div>
+    <div style="width:1px;height:40px;background:var(--border);"></div>
+    <div style="text-align:center;font-family:'Montserrat',sans-serif;">
+      <div style="font-size:1.8rem;font-weight:800;color:var(--gold);">15+</div>
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid-gray);margin-top:4px;">Countries Served</div>
+    </div>
+    <div style="width:1px;height:40px;background:var(--border);"></div>
+    <div style="text-align:center;font-family:'Montserrat',sans-serif;">
+      <div style="font-size:1.8rem;font-weight:800;color:var(--gold);">98%</div>
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--mid-gray);margin-top:4px;">Would Recommend</div>
+    </div>
+  </div>
+</div>
+
+<!-- BEST SELLERS GRID -->
+<section class="products-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-title">Fan Favorite Styles</div>
+      <div class="divider" style="margin:12px auto;"></div>
+      <p class="section-sub">Handpicked by thousands of clients across West Africa.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card" data-category="straight">
+        <span class="product-badge">🏆 #1 Best Seller</span>
+        <div class="product-img">💇‍♀️
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('Brazilian Straight Bundle','89','💇‍♀️','16 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Brazilian Straight</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">2,341 reviews</div>
+          <div class="product-name">Brazilian Straight Bundle</div>
+          <div class="product-desc">Our #1 seller for 3 years running. Ultra-smooth, zero tangle.</div>
+          <div class="product-footer">
+            <div class="product-price">$89 <span class="old-price">$110</span></div>
+            <button class="add-cart-btn" onclick="addToCart('Brazilian Straight Bundle','89','💇‍♀️','16 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="closure">
+        <span class="product-badge">🏆 #2 Best Seller</span>
+        <div class="product-img">💆‍♀️
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('HD Lace Closure Wig','199','💆‍♀️','22 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">HD Lace Wig</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">1,892 reviews</div>
+          <div class="product-name">HD Lace Closure Wig</div>
+          <div class="product-desc">Invisible HD lace, pre-plucked, ready to wear. Jaw-dropping.</div>
+          <div class="product-footer">
+            <div class="product-price">$199 <span class="old-price">$260</span></div>
+            <button class="add-cart-btn" onclick="addToCart('HD Lace Closure Wig','199','💆‍♀️','22 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="body-wave">
+        <span class="product-badge">🏆 #3 Best Seller</span>
+        <div class="product-img">👩‍🦱
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('Body Wave Bundle','95','👩‍🦱','18 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Body Wave</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">1,654 reviews</div>
+          <div class="product-name">Body Wave Bundle</div>
+          <div class="product-desc">Lush, bouncy waves. Perfect blend of volume and elegance.</div>
+          <div class="product-footer">
+            <div class="product-price">$95</div>
+            <button class="add-cart-btn" onclick="addToCart('Body Wave Bundle','95','👩‍🦱','18 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="curly">
+        <span class="product-badge">🏆 #4 Best Seller</span>
+        <div class="product-img">🌀
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('Deep Curly Bundle','105','🌀','20 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Deep Curly</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">1,223 reviews</div>
+          <div class="product-name">Deep Curly Bundle</div>
+          <div class="product-desc">Tight, luscious curls that hold their shape wash after wash.</div>
+          <div class="product-footer">
+            <div class="product-price">$105</div>
+            <button class="add-cart-btn" onclick="addToCart('Deep Curly Bundle','105','🌀','20 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="body-wave">
+        <span class="product-badge">🏆 #5 Best Seller</span>
+        <div class="product-img">💫
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('Loose Deep Wave Bundle','108','💫','22 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Loose Deep Wave</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">987 reviews</div>
+          <div class="product-name">Loose Deep Wave Bundle</div>
+          <div class="product-desc">The most versatile texture — wears straight or wavy.</div>
+          <div class="product-footer">
+            <div class="product-price">$108</div>
+            <button class="add-cart-btn" onclick="addToCart('Loose Deep Wave Bundle','108','💫','22 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="closure">
+        <span class="product-badge">🏆 #6 Best Seller</span>
+        <div class="product-img">👸
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('13x6 Frontal Lace Wig','245','👸','24 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Frontal Wig</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">876 reviews</div>
+          <div class="product-name">13×6 Frontal Lace Wig</div>
+          <div class="product-desc">Full frontal lace for the most natural undetectable hairline.</div>
+          <div class="product-footer">
+            <div class="product-price">$245</div>
+            <button class="add-cart-btn" onclick="addToCart('13x6 Frontal Lace Wig','245','👸','24 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="colored">
+        <span class="product-badge">🏆 #7 Best Seller</span>
+        <div class="product-img">🎨
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('Ombre Colored Wig','175','🎨','22 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Colored Wig</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">754 reviews</div>
+          <div class="product-name">Ombre Colored Wig</div>
+          <div class="product-desc">Stunning ombre from natural black to honey blonde.</div>
+          <div class="product-footer">
+            <div class="product-price">$175</div>
+            <button class="add-cart-btn" onclick="addToCart('Ombre Colored Wig','175','🎨','22 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="straight">
+        <span class="product-badge">🏆 #8 Best Seller</span>
+        <div class="product-img">🌊
+          <div class="product-overlay"><button class="btn btn-gold" onclick="addToCart('Malaysian Body Wave','99','🌊','20 inch')">Add to Cart</button></div>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Malaysian Hair</div>
+          <div class="product-stars">★★★★★</div>
+          <div class="product-reviews">698 reviews</div>
+          <div class="product-name">Malaysian Body Wave</div>
+          <div class="product-desc">Lustrous, full-bodied waves. Very low shedding guaranteed.</div>
+          <div class="product-footer">
+            <div class="product-price">$99</div>
+            <button class="add-cart-btn" onclick="addToCart('Malaysian Body Wave','99','🌊','20 inch')">Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-title">Why They Keep Coming Back</div>
+      <div class="divider" style="margin:12px auto;"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">I've tried so many hair brands and NOTHING comes close to KIKI HAIR. The Brazilian straight has been my go-to for 2 years. It's worth every penny!</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">C</div>
+          <div><div class="author-name">Chioma Okafor</div><div class="author-location">Abuja, Nigeria 🇳🇬</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">The HD lace wig is UNDETECTABLE. My colleagues thought it was my real hair! I ordered 3 wigs already and will keep ordering. KIKI HAIR never disappoints.</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">E</div>
+          <div><div class="author-name">Efua Asante</div><div class="author-location">Kumasi, Ghana 🇬🇭</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">"</div>
+        <div class="testimonial-text">Fast shipping, amazing quality, and the customer service on WhatsApp is so helpful! I recommend KIKI HAIR to all my friends. The body wave is my absolute fave!</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div><div class="author-name">Mariam Traoré</div><div class="author-location">Abidjan, Côte d'Ivoire 🇨🇮</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <h2>Get 15% Off Your First Order</h2>
+    <p>Subscribe for exclusive deals, new arrivals & expert styling tips.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address..." required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-name">KIKI HAIR</span><span class="logo-tagline" style="color:var(--gold);">Premium Hair Collection</span></div>
+        <p>West Africa's #1 premium human hair brand.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">📸</a><a href="#" class="social-link">💬</a><a href="#" class="social-link">🎵</a><a href="#" class="social-link">👥</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><div class="footer-links"><a href="index.html">Home</a><a href="shop.html">Shop Hair</a><a href="best-seller.html">Best Seller</a><a href="hair-bundles.html">Hair Bundles</a><a href="about.html">About Us</a></div></div>
+      <div class="footer-col"><h4>Help</h4><div class="footer-links"><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a><a href="account.html">My Account</a><a href="#">Shipping Info</a><a href="#">Return Policy</a></div></div>
+      <div class="footer-col"><h4>Contact</h4>
+        <div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span>+1 (555) 123-4567<br>WhatsApp 24/7</span></div>
+        <div class="footer-contact-item"><span class="footer-contact-icon">✉️</span><span>hello@kikiHair.com</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="container"><div class="footer-bottom"><p>© 2025 KIKI HAIR. All rights reserved.</p><div class="payment-icons"><span class="payment-icon">VISA</span><span class="payment-icon">MC</span><span class="payment-icon">PayPal</span><span class="payment-icon">MTN MoMo</span></div></div></div>
+</footer>
+
+<a href="https://wa.me/15551234567" class="whatsapp-float" target="_blank">💬</a>
+<div id="toast" class="toast"></div>
+<script src="js/main.js"></script>
+</body>
+</html>
