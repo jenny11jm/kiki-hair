@@ -62,14 +62,38 @@
   <div class="container">
     <div class="page-hero-content">
       <h1>Shop All <span>Hair</span></h1>
-      <p>Browse our full collection of premium 100% virgin human hair — bundles, wigs, closures, and more. All textures, all lengths.</p>
+      <p>Premium 100% virgin human hair — Hair Extensions & Wigs. All textures, all lengths, delivered across West Africa.</p>
       <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <span>Shop Hair</span></div>
     </div>
   </div>
 </section>
 
+<!-- CATEGORY BANNER -->
+<div style="background:var(--cream);border-bottom:1px solid var(--border);padding:0;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;">
+      <a href="#extensions" style="display:flex;align-items:center;gap:20px;padding:28px 32px;border-right:1px solid var(--border);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--light)'" onmouseout="this.style.background='transparent'">
+        <div style="font-size:2.4rem;">💇‍♀️</div>
+        <div>
+          <div style="font-size:0.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent-light);font-weight:700;margin-bottom:3px;">Category</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--black);">Hair Extensions</div>
+          <div style="font-size:0.78rem;color:var(--text-mid);margin-top:2px;">Clip-in · Tape-in · Sew-in · Keratin</div>
+        </div>
+      </a>
+      <a href="#wigs" style="display:flex;align-items:center;gap:20px;padding:28px 32px;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--light)'" onmouseout="this.style.background='transparent'">
+        <div style="font-size:2.4rem;">👸</div>
+        <div>
+          <div style="font-size:0.68rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent-light);font-weight:700;margin-bottom:3px;">Category</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--black);">Wigs</div>
+          <div style="font-size:0.78rem;color:var(--text-mid);margin-top:2px;">Lace Front · HD Lace · Full Lace · Headband</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- SHOP LAYOUT -->
-<section style="padding: 56px 0 90px;">
+<section style="padding:56px 0 90px;">
   <div class="container">
     <div class="shop-layout">
 
@@ -77,31 +101,30 @@
       <aside class="sidebar">
         <div class="sidebar-group">
           <div class="sidebar-group-title">Category <span>−</span></div>
-          <label class="sidebar-option checked"><input type="checkbox" checked /> All Products</label>
-          <label class="sidebar-option"><input type="checkbox" /> Hair Extensions</label>
-          <label class="sidebar-option"><input type="checkbox" /> Wigs</label>
-          <label class="sidebar-option"><input type="checkbox" /> Closures & Frontals</label>
-          <label class="sidebar-option"><input type="checkbox" /> Bundle Deals</label>
-          <label class="sidebar-option"><input type="checkbox" /> Colored Hair</label>
+          <label class="sidebar-option checked"><input type="checkbox" checked onchange="filterProducts()" data-filter="all" /> All Products</label>
+          <label class="sidebar-option"><input type="checkbox" onchange="filterProducts()" data-filter="extensions" /> Hair Extensions</label>
+          <label class="sidebar-option"><input type="checkbox" onchange="filterProducts()" data-filter="wigs" /> Wigs</label>
         </div>
+
         <div class="sidebar-group">
           <div class="sidebar-group-title">Hair Type <span>−</span></div>
           <label class="sidebar-option"><input type="checkbox" /> Straight</label>
           <label class="sidebar-option"><input type="checkbox" /> Body Wave</label>
-          <label class="sidebar-option"><input type="checkbox" /> Curly</label>
           <label class="sidebar-option"><input type="checkbox" /> Deep Wave</label>
+          <label class="sidebar-option"><input type="checkbox" /> Curly</label>
           <label class="sidebar-option"><input type="checkbox" /> Water Wave</label>
-          <label class="sidebar-option"><input type="checkbox" /> Loose Deep Wave</label>
-          <label class="sidebar-option"><input type="checkbox" /> Kinky Curly</label>
+          <label class="sidebar-option"><input type="checkbox" /> Loose Wave</label>
         </div>
+
         <div class="sidebar-group">
           <div class="sidebar-group-title">Length <span>−</span></div>
-          <label class="sidebar-option"><input type="checkbox" /> 8"–12" (Short)</label>
-          <label class="sidebar-option"><input type="checkbox" /> 14"–18" (Medium)</label>
-          <label class="sidebar-option"><input type="checkbox" /> 20"–24" (Long)</label>
-          <label class="sidebar-option"><input type="checkbox" /> 26"–30" (Extra Long)</label>
-          <label class="sidebar-option"><input type="checkbox" /> 32"–40" (Super Long)</label>
+          <label class="sidebar-option"><input type="checkbox" /> 8"–12"</label>
+          <label class="sidebar-option"><input type="checkbox" /> 14"–18"</label>
+          <label class="sidebar-option"><input type="checkbox" /> 20"–24"</label>
+          <label class="sidebar-option"><input type="checkbox" /> 26"–30"</label>
+          <label class="sidebar-option"><input type="checkbox" /> 32"+</label>
         </div>
+
         <div class="sidebar-group">
           <div class="sidebar-group-title">Price <span>−</span></div>
           <label class="sidebar-option"><input type="checkbox" /> Under $100</label>
@@ -109,6 +132,7 @@
           <label class="sidebar-option"><input type="checkbox" /> $200 – $299</label>
           <label class="sidebar-option"><input type="checkbox" /> $300+</label>
         </div>
+
         <div class="sidebar-group">
           <div class="sidebar-group-title">Origin <span>−</span></div>
           <label class="sidebar-option"><input type="checkbox" /> Brazilian</label>
@@ -121,7 +145,7 @@
       <!-- PRODUCTS -->
       <div>
         <div class="shop-toolbar-right">
-          <span class="product-count">12 products</span>
+          <span class="product-count" id="productCount">14 products</span>
           <select class="sort-select">
             <option>Sort: Featured</option>
             <option>Price: Low to High</option>
@@ -131,183 +155,239 @@
           </select>
         </div>
 
-        <div class="products-grid">
-
-          <div class="product-card" data-category="straight">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">💇‍♀️</div>
-              <div class="product-badge-wrap"><span class="badge badge-hot">Best Seller</span></div>
-              <div class="product-overlay"><button onclick="addToCart('Brazilian Straight Bundle','89','💇‍♀️','16 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Brazilian · Straight</div>
-              <div class="product-name">Brazilian Straight Bundle</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$89</span><span class="old-price">$110</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Brazilian Straight Bundle','89','💇‍♀️','16 inch')">Add to Cart</button>
+        <!-- HAIR EXTENSIONS -->
+        <div id="extensions" style="margin-bottom:48px;">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);">
+            <div style="font-size:1.6rem;">💇‍♀️</div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--black);">Hair Extensions</div>
+              <div style="font-size:0.75rem;color:var(--text-light);letter-spacing:1px;">Tóc nối — 7 products</div>
             </div>
           </div>
+          <div class="products-grid" id="extensionsGrid">
 
-          <div class="product-card" data-category="body-wave">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">👩‍🦱</div>
-              <div class="product-badge-wrap"><span class="badge badge-new">New</span></div>
-              <div class="product-overlay"><button onclick="addToCart('Body Wave Bundle','95','👩‍🦱','18 inch')">Add to Cart</button></div>
+            <div class="product-card" data-cat="extensions">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">✂️</div>
+                <div class="product-badge-wrap"><span class="badge badge-hot">Best Seller</span></div>
+                <div class="product-overlay"><button onclick="addToCart('Clip-In Hair Extensions','75','✂️','16 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Clip-In Extensions</div>
+                <div class="product-name">Clip-In Hair Extensions</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$75</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Clip-In Hair Extensions','75','✂️','16 inch')">Add to Cart</button>
+              </div>
             </div>
-            <div class="product-info">
-              <div class="product-category">Peruvian · Body Wave</div>
-              <div class="product-name">Body Wave Bundle</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$95</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Body Wave Bundle','95','👩‍🦱','18 inch')">Add to Cart</button>
+
+            <div class="product-card" data-cat="extensions">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">💇‍♀️</div>
+                <div class="product-badge-wrap"><span class="badge badge-sale">Sale</span></div>
+                <div class="product-overlay"><button onclick="addToCart('Tape-In Hair Extensions','89','💇‍♀️','18 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Tape-In Extensions</div>
+                <div class="product-name">Tape-In Hair Extensions</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$89</span><span class="old-price">$110</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Tape-In Hair Extensions','89','💇‍♀️','18 inch')">Add to Cart</button>
+              </div>
             </div>
+
+            <div class="product-card" data-cat="extensions">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">🪡</div>
+                <div class="product-overlay"><button onclick="addToCart('Sew-In Weave Bundle','95','🪡','20 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Sew-In Weave</div>
+                <div class="product-name">Sew-In Weave Bundle</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$95</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Sew-In Weave Bundle','95','🪡','20 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="extensions">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">✨</div>
+                <div class="product-badge-wrap"><span class="badge badge-new">New</span></div>
+                <div class="product-overlay"><button onclick="addToCart('Keratin Bond Extensions','120','✨','20 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Keratin Bond</div>
+                <div class="product-name">Keratin Bond Extensions</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$120</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Keratin Bond Extensions','120','✨','20 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="extensions">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">🌊</div>
+                <div class="product-overlay"><button onclick="addToCart('Halo Hair Extensions','85','🌊','18 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Halo Extensions</div>
+                <div class="product-name">Halo Hair Extensions</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$85</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Halo Hair Extensions','85','🌊','18 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="extensions">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">🌀</div>
+                <div class="product-badge-wrap"><span class="badge badge-hot">Popular</span></div>
+                <div class="product-overlay"><button onclick="addToCart('I-Tip Extensions','105','🌀','22 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">I-Tip Extensions</div>
+                <div class="product-name">I-Tip Micro Ring Extensions</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$105</span></div>
+                <button class="add-cart-btn" onclick="addToCart('I-Tip Extensions','105','🌀','22 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="extensions">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">💫</div>
+                <div class="product-overlay"><button onclick="addToCart('Ponytail Extension','55','💫','20 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Ponytail Extension</div>
+                <div class="product-name">Wrap Around Ponytail</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$55</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Ponytail Extension','55','💫','20 inch')">Add to Cart</button>
+              </div>
+            </div>
+
           </div>
-
-          <div class="product-card" data-category="curly">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">🌀</div>
-              <div class="product-overlay"><button onclick="addToCart('Deep Curly Bundle','105','🌀','20 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Brazilian · Curly</div>
-              <div class="product-name">Deep Curly Bundle</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$105</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Deep Curly Bundle','105','🌀','20 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="closure">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">💆‍♀️</div>
-              <div class="product-badge-wrap"><span class="badge badge-sale">Sale</span></div>
-              <div class="product-overlay"><button onclick="addToCart('HD Lace Closure Wig','199','💆‍♀️','22 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">HD Lace · Wig</div>
-              <div class="product-name">HD Lace Closure Wig</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$199</span><span class="old-price">$260</span></div>
-              <button class="add-cart-btn" onclick="addToCart('HD Lace Closure Wig','199','💆‍♀️','22 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="straight">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">✨</div>
-              <div class="product-overlay"><button onclick="addToCart('Indian Straight Bundle','85','✨','18 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Indian · Straight</div>
-              <div class="product-name">Indian Straight Bundle</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$85</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Indian Straight Bundle','85','✨','18 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="body-wave">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">🌊</div>
-              <div class="product-overlay"><button onclick="addToCart('Malaysian Body Wave','99','🌊','20 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Malaysian · Body Wave</div>
-              <div class="product-name">Malaysian Body Wave</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$99</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Malaysian Body Wave','99','🌊','20 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="colored">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">🎨</div>
-              <div class="product-badge-wrap"><span class="badge badge-new">New</span></div>
-              <div class="product-overlay"><button onclick="addToCart('Ombre Colored Wig','175','🎨','22 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Colored · Wig</div>
-              <div class="product-name">Ombre Colored Wig</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$175</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Ombre Colored Wig','175','🎨','22 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="curly">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">🔱</div>
-              <div class="product-overlay"><button onclick="addToCart('Water Wave Bundle','112','🔱','18 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Brazilian · Water Wave</div>
-              <div class="product-name">Water Wave Bundle</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$112</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Water Wave Bundle','112','🔱','18 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="closure">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">👸</div>
-              <div class="product-overlay"><button onclick="addToCart('13×6 Frontal Wig','245','👸','24 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">HD Lace · Frontal Wig</div>
-              <div class="product-name">13×6 Frontal Lace Wig</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$245</span></div>
-              <button class="add-cart-btn" onclick="addToCart('13×6 Frontal Wig','245','👸','24 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="colored">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">💛</div>
-              <div class="product-badge-wrap"><span class="badge badge-sale">Sale</span></div>
-              <div class="product-overlay"><button onclick="addToCart('Blonde Straight Wig','220','💛','20 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">613 Blonde · Wig</div>
-              <div class="product-name">Blonde Straight Wig</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$220</span><span class="old-price">$280</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Blonde Straight Wig','220','💛','20 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="straight">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">🖤</div>
-              <div class="product-overlay"><button onclick="addToCart('Peruvian Straight Bundle','92','🖤','20 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Peruvian · Straight</div>
-              <div class="product-name">Peruvian Straight Bundle</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$92</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Peruvian Straight Bundle','92','🖤','20 inch')">Add to Cart</button>
-            </div>
-          </div>
-
-          <div class="product-card" data-category="body-wave">
-            <div class="product-img-wrap">
-              <div class="product-img-placeholder">💫</div>
-              <div class="product-badge-wrap"><span class="badge badge-hot">Popular</span></div>
-              <div class="product-overlay"><button onclick="addToCart('Loose Deep Wave Bundle','108','💫','22 inch')">Add to Cart</button></div>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Brazilian · Deep Wave</div>
-              <div class="product-name">Loose Deep Wave Bundle</div>
-              <div class="product-stars">★★★★★</div>
-              <div class="product-price-row"><span class="product-price">$108</span></div>
-              <button class="add-cart-btn" onclick="addToCart('Loose Deep Wave Bundle','108','💫','22 inch')">Add to Cart</button>
-            </div>
-          </div>
-
         </div>
+
+        <!-- WIGS -->
+        <div id="wigs">
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);">
+            <div style="font-size:1.6rem;">👸</div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--black);">Wigs</div>
+              <div style="font-size:0.75rem;color:var(--text-light);letter-spacing:1px;">Tóc giả — 7 products</div>
+            </div>
+          </div>
+          <div class="products-grid" id="wigsGrid">
+
+            <div class="product-card" data-cat="wigs">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">💆‍♀️</div>
+                <div class="product-badge-wrap"><span class="badge badge-hot">Best Seller</span></div>
+                <div class="product-overlay"><button onclick="addToCart('HD Lace Front Wig','199','💆‍♀️','22 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">HD Lace Front Wig</div>
+                <div class="product-name">HD Lace Front Wig 13×4</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$199</span><span class="old-price">$260</span></div>
+                <button class="add-cart-btn" onclick="addToCart('HD Lace Front Wig','199','💆‍♀️','22 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="wigs">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">👸</div>
+                <div class="product-badge-wrap"><span class="badge badge-new">New</span></div>
+                <div class="product-overlay"><button onclick="addToCart('Full Lace Wig','245','👸','24 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Full Lace Wig</div>
+                <div class="product-name">Full Lace Wig — Natural Black</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$245</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Full Lace Wig','245','👸','24 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="wigs">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">🌟</div>
+                <div class="product-overlay"><button onclick="addToCart('Glueless Lace Wig','175','🌟','20 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Glueless Wig</div>
+                <div class="product-name">Glueless HD Lace Wig</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$175</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Glueless Lace Wig','175','🌟','20 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="wigs">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">🎀</div>
+                <div class="product-badge-wrap"><span class="badge badge-hot">Popular</span></div>
+                <div class="product-overlay"><button onclick="addToCart('Headband Wig','99','🎀','18 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Headband Wig</div>
+                <div class="product-name">Headband Wig — No Glue</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$99</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Headband Wig','99','🎀','18 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="wigs">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">✂️</div>
+                <div class="product-badge-wrap"><span class="badge badge-sale">Sale</span></div>
+                <div class="product-overlay"><button onclick="addToCart('Bob Lace Wig','145','✂️','12 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Bob Wig</div>
+                <div class="product-name">Short Bob Lace Wig</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$145</span><span class="old-price">$180</span></div>
+                <button class="add-cart-btn" onclick="addToCart('Bob Lace Wig','145','✂️','12 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="wigs">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">💛</div>
+                <div class="product-badge-wrap"><span class="badge badge-new">New</span></div>
+                <div class="product-overlay"><button onclick="addToCart('613 Blonde Lace Wig','220','💛','20 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">Colored Wig</div>
+                <div class="product-name">613 Blonde Lace Front Wig</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$220</span><span class="old-price">$280</span></div>
+                <button class="add-cart-btn" onclick="addToCart('613 Blonde Lace Wig','220','💛','20 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+            <div class="product-card" data-cat="wigs">
+              <div class="product-img-wrap">
+                <div class="product-img-placeholder">🌀</div>
+                <div class="product-overlay"><button onclick="addToCart('360 Lace Wig','265','🌀','24 inch')">Add to Cart</button></div>
+              </div>
+              <div class="product-info">
+                <div class="product-category">360 Lace Wig</div>
+                <div class="product-name">360 Full Lace Wig</div>
+                <div class="product-stars">★★★★★</div>
+                <div class="product-price-row"><span class="product-price">$265</span></div>
+                <button class="add-cart-btn" onclick="addToCart('360 Lace Wig','265','🌀','24 inch')">Add to Cart</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -317,8 +397,8 @@
   <div class="container">
     <span class="section-label" style="display:block;text-align:center;">Newsletter</span>
     <h2>Get 15% Off Your First Order</h2>
-    <p>Subscribe for exclusive deals, new arrivals & expert styling tips.</p>
-    <form class="newsletter-form" onsubmit="showToast('✓ Subscribed!');this.reset();return false;">
+    <p>Subscribe for exclusive deals, new arrivals & styling tips.</p>
+    <form class="newsletter-form" onsubmit="showToast('✓ Subscribed! Welcome to the KIKI HAIR family.');this.reset();return false;">
       <input type="email" placeholder="Your email address" required />
       <button type="submit">Subscribe</button>
     </form>
@@ -330,10 +410,18 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo" style="margin-bottom:0;"><div class="logo-icon" style="border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);">👑</div><div class="logo-text"><span class="logo-brand">KIKI HAIR</span><span class="logo-sub">extensions</span></div></div>
-        <p>West Africa's #1 premium human hair brand.</p>
+        <p>West Africa's premium hair brand. 100% virgin human hair extensions & wigs.</p>
         <div class="social-links"><a href="#" class="social-link">📸</a><a href="#" class="social-link">💬</a><a href="#" class="social-link">🎵</a><a href="#" class="social-link">👥</a></div>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><div class="footer-links"><a href="index.html">Home</a><a href="shop.html">Shop Hair</a><a href="best-seller.html">Best Seller</a><a href="hair-bundles.html">Hair Bundles</a><a href="about.html">About Us</a></div></div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <div class="footer-links">
+          <a href="shop.html#extensions">Hair Extensions</a>
+          <a href="shop.html#wigs">Wigs</a>
+          <a href="best-seller.html">Best Seller</a>
+          <a href="hair-bundles.html">Bundle Deals</a>
+        </div>
+      </div>
       <div class="footer-col"><h4>Help</h4><div class="footer-links"><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a><a href="account.html">My Account</a><a href="#">Shipping Info</a><a href="#">Return Policy</a></div></div>
       <div class="footer-col"><h4>Contact</h4>
         <div class="footer-contact-item"><span class="footer-contact-icon">📞</span><span>+1 (555) 123-4567<br>WhatsApp 24/7</span></div>
